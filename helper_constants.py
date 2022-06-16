@@ -5,12 +5,12 @@ Date created: 16/06/2022
 """
 
 
-class PromotionType:
+class PromotionNames:
     BASIC = "Basic"
     GALLERY = "Gallery"
     FEATURE = "Feature"
 
-    descriptions = {
+    description = {
         BASIC: "Lowest position in category",
         GALLERY: "Good position in category",
         FEATURE: "Better position in category"
