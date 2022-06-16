@@ -1,5 +1,5 @@
 """
-Description: this python module contains the tests about category rules.
+Description: this python module contains the tests about category details.
 Notes: a test function's name must start with 'test_'.
 Author: Yimian Zhao
 Date created: 15/06/2022
