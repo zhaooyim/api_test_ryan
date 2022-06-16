@@ -9,7 +9,7 @@ This is a test project that accomendates an API test and the supporting utilitie
 ## Requirements:
 Python 3 ([How to install Python 3](https://realpython.com/installing-python/))
 
-Note: For macOS, it is recommended to install Python from HomeBrew. See the link above for more.
+Note: For macOS - the recent versions come with a pre-installed Python3 which is sufficient for this project. If it is not the case by any chance or you prefer to use a third party Python for any reason, it is recommended to install Python from HomeBrew. See the How-To linked above and go to section How to Install From Homebrew.
 
 ## Platform
 The program has been tested on the following platforms:
