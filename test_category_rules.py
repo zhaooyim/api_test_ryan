@@ -22,5 +22,5 @@ def test_promotion_gallery_has_good_position_in_category(url, category_id, categ
     assert(can_relist == actual_response_json['CanRelist'])
 
     for element in actual_response_json['Promotions']:
-        if element['Name'] == "Gallery":
+        if "Gallery" == element['Name']:
             assert("Good position in category" in element['Description'])
