@@ -21,7 +21,7 @@ def test_promotion_gallery_has_good_position_in_category(url, category_id, categ
     assert (category_name == actual_response_json['Name'])
     assert (can_relist == actual_response_json['CanRelist'])
 
-    # Verify there is at least one Gallery promotion which has the correct description
+    # Verify there is at least one Gallery promotion, and it has the correct description
     gallery_promotions = [promotion for promotion in actual_response_json['Promotions']
                           if PromotionType.GALLERY == promotion['Name']]
     assert (len(gallery_promotions) > 0)
