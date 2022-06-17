@@ -40,42 +40,41 @@ C:\example\path\api_test_yimian> run_tests.bat
 
 ## Check Test Results
 
-### PASS example
+### PASS example result
 ```
-============================================================ test session starts =============================================================
+=================================================================================================================================================== test session starts ====================================================================================================================================================
 platform darwin -- Python 3.9.13, pytest-7.1.2, pluggy-1.0.0
-rootdir: /Users/mymac/Workspace/assurity_test
+rootdir: /Users/mymac/Workspace/api_test_yimian
 collected 1 item
 
-test_category_rules.py .                                                                                                               [100%]
+test_categories.py .                                                                                                                                                                                                                                                                                                 [100%]
 
-============================================================= 1 passed in 1.11s ==============================================================
+==================================================================================================================================================== 1 passed in 0.70s =====================================================================================================================================================
 ```
 
-### FAIL example
+### FAIL example result
 ```
-============================================================ test session starts =============================================================
+=================================================================================================================================================== test session starts ====================================================================================================================================================
 platform darwin -- Python 3.9.13, pytest-7.1.2, pluggy-1.0.0
-rootdir: /Users/mymac/Workspace/assurity_test
+rootdir: /Users/mymac/Workspace/api_test_yimian
 collected 1 item
 
-test_category_rules.py F                                                                                                               [100%]
+test_categories.py F                                                                                                                                                                                                                                                                                                 [100%]
 
-================================================================== FAILURES ==================================================================
-_ test_promotion_gallery_has_good_position_in_category[https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false-6317-Carbon credits-True] _
+========================================================================================================================================================= FAILURES =========================================================================================================================================================
+_________________________________________________________________________________________ test_category_details[https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false-6325-Carbon credits-True-promotions0] __________________________________________________________________________________________
 
-url = 'https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false', category_id = 6317, category_name = 'Carbon credits'
-can_relist = True
+url = 'https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false', category_id = 6325, category_name = 'Carbon credits', can_relist = True, promotions = ['Gallery']
 
-    @pytest.mark.parametrize("url, category_id, category_name, can_relist", testdata)
-    def test_promotion_gallery_has_good_position_in_category(url, category_id, category_name, can_relist):
-        actual_response_json = helpers_http.send_request_get(url)
+    @pytest.mark.parametrize("url, category_id, category_name, can_relist, promotions", testdata_category_details)
+    def test_category_details(url, category_id, category_name, can_relist, promotions):
+        actual_response_json = helper_http.send_request_get(url)
 
->       assert(category_id == actual_response_json['CategoryId'])
-E       assert 6317 == 6327
+>       assert (category_id == actual_response_json["CategoryId"])
+E       assert 6325 == 6327
 
-test_category_rules.py:20: AssertionError
-========================================================== short test summary info ===========================================================
-FAILED test_category_rules.py::test_promotion_gallery_has_good_position_in_category[https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false-6317-Carbon credits-True]
-============================================================= 1 failed in 0.47s ==============================================================
+test_categories.py:23: AssertionError
+================================================================================================================================================= short test summary info ==================================================================================================================================================
+FAILED test_categories.py::test_category_details[https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false-6325-Carbon credits-True-promotions0] - assert 6325 == 6327
+==================================================================================================================================================== 1 failed in 0.14s =====================================================================================================================================================
 ```
